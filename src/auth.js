@@ -6,15 +6,8 @@ const TokenManager = require("./tokenManager");
 class PingOneAuthClient {
     constructor (config) {
         this.config = config;
-        if (this.config.issuer) {
-            this.issuer = this.config.issuer;
-        }
-        else {
-            this.issuer = `${
-                config.AUTH_URI ? config.AUTH_URI : "https://auth.pingone.com"
-            }/${config.environmentId}/as`;
-            this.config.issuer = this.issuer;
-        }
+        this.config.issuer = "https://pingauthpoc.roundpointmortgage.com/as";
+        this.issuer = "https://pingauthpoc.roundpointmortgage.com/as";
 
         utils.assertValidConfig(config);
         this.http = new Http();
