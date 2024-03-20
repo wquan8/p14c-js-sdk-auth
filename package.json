@@ -1,0 +1,66 @@
+{
+  "name": "@ping-identity/p14c-js-sdk-auth",
+  "version": "1.0.0-pre.2",
+  "repository": "https://github.com/pingidentity/pingone-javascript-sdk",
+  "browser": "dist/browser/@ping-identity/p14c-js-sdk-auth.js",
+  "main": "dist/node/@ping-identity/p14c-js-sdk-auth.js",
+  "module": "src/index.js",
+  "react-native": "src/index.js",
+  "keywords": [
+    "pingidentity",
+    "pingone",
+    "oidc",
+    "openidconnect",
+    "OpenId Connect",
+    "authentication",
+    "auth"
+  ],
+  "scripts": {
+    "lint": "eslint src test",
+    "build": "webpack --optimize-minimize --config webpack.config.js",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "@ping-identity/p14c-js-sdk-core": "1.0.0-pre.2",
+    "@ping-identity/p14c-js-sdk-jwt": "1.0.0-pre.2",
+    "cross-fetch": "^3.0.5",
+    "js-cookie": "^2.2.1"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "../node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "**/test/*.test.js"
+    ],
+    "testResultsProcessor": "jest-junit",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "./dist"
+    ],
+    "resetMocks": true,
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test-results/jest"
+        }
+      ]
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "text-summary"
+    ]
+  },
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ]
+}
